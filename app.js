@@ -10,7 +10,8 @@ app.get('/:searchTerm/:size/:ranking', async (req, res) => {
     const npmResponse = await fetch(`http://registry.npmjs.com/-/v1/search?text=${searchTerm}&size=${size}`);
     if (!npmResponse.ok) throw new Error('NPM API request failed');
     const npmData = npmResponse.json();
-    return npmData
+    //send this back to the client
+    res.send(npmData);
     }
    catch (error) {
     console.error('Error:', error.message);
