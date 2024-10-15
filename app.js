@@ -15,3 +15,8 @@ app.get('/:searchTerm/:size/:ranking', async (req, res) => {
    catch (error) {
     console.error('Error:', error.message);
   }})
+
+
+app.listen(3000, () => {
+console.log(`Server is running`);
+})
