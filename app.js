@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors())
-app.get('/:searchTerm/:size/:ranking', async (req, res) => {
+app.get('/:searchTerm/:size', async (req, res) => {
   try {
     const { searchTerm, size = 10 } = req.params;
     
