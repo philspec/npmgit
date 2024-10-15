@@ -18,7 +18,7 @@ app.get('/:searchTerm/:size', async (req, res) => {
     const npmData = await npmResponse.json();
     
     // Send the parsed data to the client
-    res.json(npmData,npmResponse);
+    res.send(npmData,npmResponse)
     
   } catch (error) {
     console.error('Error:', error.message);
