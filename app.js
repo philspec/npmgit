@@ -1,7 +1,10 @@
+// server for fetching the data from npm server an dsending to client
+
+
 const express = require('express');
 const cors = require('cors');
-const app = express();
-app.use(cors())
+app.use(cors());
+app.use(express.json());
 app.get('/:searchTerm/:size', async (req, res) => {
   try {
     const { searchTerm, size = 10 } = req.params;
