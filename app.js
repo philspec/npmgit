@@ -1,7 +1,6 @@
 const express = require('express');
 
 const app = express();
-app.use();
 app.get('/:searchTerm/:size/:ranking', async (req, res) => {
   try {
     const { searchTerm, size = 10 , ranking = 'popularity' } = req.params;
