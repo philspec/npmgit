@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');  // Install this: npm install node-fetch
 const app = express();
 
 // Middleware
@@ -20,7 +19,7 @@ app.get('/:searchTerm/:size', async (req, res) => {
     const npmData = await npmResponse.json();
     
     // Send the parsed data to the client
-    res.json(npmResponse, npmData);
+    res.json(npmData,npmResponse);
     
   } catch (error) {
     console.error('Error:', error.message);
