@@ -4,7 +4,6 @@ const app = express();
 
 // Middleware
 app.use(cors());                       // Allow Cross-Origin requests
-app.use(express.json());               // Parse JSON request bodies
 
 // Route for fetching NPM package data
 app.get('/:searchTerm/:size', async (req, res) => {
@@ -23,7 +22,6 @@ app.get('/:searchTerm/:size', async (req, res) => {
     
   } catch (error) {
     console.error('Error:', error.message);
-    res.status(500).json({ error: error.message });
   }
 });
 
