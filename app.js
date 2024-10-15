@@ -4,12 +4,12 @@ const app = express();
 app.use(cors())
 app.get('/:searchTerm/:size/:ranking', async (req, res) => {
   try {
-    const { searchTerm, size = 10 , ranking = 'popularity' } = req.params;
+    const { searchTerm, size = 10 , ranking = 'optimal' } = req.params;
     
     // Fetch NPM package data
     const npmResponse = await fetch(`http://registry.npmjs.com/-/v1/search?text=${searchTerm}&size=${size}&ranking=${ranking}`);
     if (!npmResponse.ok) throw new Error('NPM API request failed');
-    const npmData = await npmResponse.json();
+    const npmData = npmResponse.json();
     return npmData
     }
    catch (error) {
