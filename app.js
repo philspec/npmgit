@@ -3,8 +3,8 @@
 
 const express = require('express');
 const cors = require('cors');
+const app = express.json;
 app.use(cors());
-app.use(express.json());
 app.get('/:searchTerm/:size', async (req, res) => {
   try {
     const { searchTerm, size = 10 } = req.params;
