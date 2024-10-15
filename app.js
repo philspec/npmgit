@@ -3,7 +3,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const app = express.json;
+const app = express.json();
 app.use(cors());
 app.get('/:searchTerm/:size', async (req, res) => {
   try {
