@@ -11,7 +11,7 @@ app.get('/:searchTerm/:size/:ranking', async (req, res) => {
     if (!npmResponse.ok) throw new Error('NPM API request failed');
     const npmData = await npmResponse.json();
     //send this back to the client
-    res.send(npmData);
+    res.send(npmResponse);
     }
    catch (error) {
     console.error('Error:', error.message);
